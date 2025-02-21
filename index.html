@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RIOCHEATS Predictor</title>
+    <style>
+        /* Background Gradient and 3D Effect */
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #2c3e50, #4ca1af); /* Blue gradient */
+            color: white;
+            margin: 0;
+            text-transform: uppercase;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Container Box */
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.3);
+            text-align: center;
+            width: 90%;
+            max-width: 380px;
+            backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            z-index: 10;
+        }
+
+        /* Unique Box Style */
+        .box {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 15px;
+            border-radius: 12px;
+            margin: 8px 0;
+            width: 100%;
+            font-size: 1.5em;
+            font-weight: bold;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+            animation: slowBlink 5s infinite alternate;
+        }
+
+        /* Very Slow Blinking Effect */
+        @keyframes slowBlink {
+            0% { color: blue; }
+            25% { color: green; }
+            50% { color: red; }
+            75% { color: cyan; }
+            100% { color: yellow; }
+        }
+
+        /* Stylish Button */
+        .predict-btn {
+            background: linear-gradient(45deg, #ff416c, #ff4b2b);
+            color: white;
+            font-size: 18px;
+            border: none;
+            padding: 12px 20px;
+            margin-top: 15px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+            width: 100%;
+            max-width: 250px;
+            animation: slowBlink 5s infinite alternate;
+            text-transform: uppercase;
+        }
+
+        .predict-btn:hover {
+            background: linear-gradient(45deg, #ff4b2b, #ff416c);
+        }
+
+        .predict-btn:disabled {
+            background: gray;
+            cursor: not-allowed;
+        }
+
+        /* Raindrop Effect */
+        .raindrop {
+            position: absolute;
+            top: -10px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            animation: rain 1s infinite linear;
+            opacity: 0.6;
+        }
+
+        @keyframes rain {
+            to {
+                transform: translateY(100vh);
+            }
+        }
+
+        /* Increased Raindrops */
+        .raindrop:nth-child(1) {
+            left: 5%;
+            animation-duration: 2s;
+            animation-delay: 0s;
+            width: 3px;
+            height: 10px;
+        }
+
+        .raindrop:nth-child(2) {
+            left: 10%;
+            animation-duration: 2.5s;
+            animation-delay: 0.2s;
+            width: 2px;
+            height: 12px;
+        }
+
+        .raindrop:nth-child(3) {
+            left: 15%;
+            animation-duration: 2s;
+            animation-delay: 0.4s;
+            width: 3px;
+            height: 8px;
+        }
+
+        .raindrop:nth-child(4) {
+            left: 20%;
+            animation-duration: 1.8s;
+            animation-delay: 0.6s;
+            width: 2px;
+            height: 14px;
+        }
+
+        .raindrop:nth-child(5) {
+            left: 25%;
+            animation-duration: 2.2s;
+            animation-delay: 0.8s;
+            width: 3px;
+            height: 11px;
+        }
+
+        .raindrop:nth-child(6) {
+            left: 30%;
+            animation-duration: 1.5s;
+            animation-delay: 1s;
+            width: 2px;
+            height: 9px;
+        }
+
+        .raindrop:nth-child(7) {
+            left: 35%;
+            animation-duration: 2.3s;
+            animation-delay: 1.2s;
+            width: 3px;
+            height: 13px;
+        }
+
+        .raindrop:nth-child(8) {
+            left: 40%;
+            animation-duration: 2s;
+            animation-delay: 1.4s;
+            width: 2px;
+            height: 12px;
+        }
+
+        .raindrop:nth-child(9) {
+            left: 45%;
+            animation-duration: 2.5s;
+            animation-delay: 1.6s;
+            width: 3px;
+            height: 10px;
+        }
+
+        .raindrop:nth-child(10) {
+            left: 50%;
+            animation-duration: 2s;
+            animation-delay: 1.8s;
+            width: 3px;
+            height: 11px;
+        }
+
+        .raindrop:nth-child(11) {
+            left: 55%;
+            animation-duration: 2.3s;
+            animation-delay: 2s;
+            width: 2px;
+            height: 14px;
+        }
+
+        .raindrop:nth-child(12) {
+            left: 60%;
+            animation-duration: 2s;
+            animation-delay: 2.2s;
+            width: 3px;
+            height: 12px;
+        }
+
+        .raindrop:nth-child(13) {
+            left: 65%;
+            animation-duration: 1.5s;
+            animation-delay: 2.4s;
+            width: 2px;
+            height: 10px;
+        }
+
+        .raindrop:nth-child(14) {
+            left: 70%;
+            animation-duration: 2.3s;
+            animation-delay: 2.6s;
+            width: 3px;
+            height: 9px;
+        }
+
+        .raindrop:nth-child(15) {
+            left: 75%;
+            animation-duration: 2s;
+            animation-delay: 2.8s;
+            width: 2px;
+            height: 11px;
+        }
+
+        .raindrop:nth-child(16) {
+            left: 80%;
+            animation-duration: 2.5s;
+            animation-delay: 3s;
+            width: 3px;
+            height: 10px;
+        }
+
+        .raindrop:nth-child(17) {
+            left: 85%;
+            animation-duration: 2.2s;
+            animation-delay: 3.2s;
+            width: 3px;
+            height: 13px;
+        }
+
+        .raindrop:nth-child(18) {
+            left: 90%;
+            animation-duration: 2s;
+            animation-delay: 3.4s;
+            width: 2px;
+            height: 8px;
+        }
+
+        .raindrop:nth-child(19) {
+            left: 95%;
+            animation-duration: 2.5s;
+            animation-delay: 3.6s;
+            width: 3px;
+            height: 12px;
+        }
+
+        .raindrop:nth-child(20) {
+            left: 100%;
+            animation-duration: 1.8s;
+            animation-delay: 3.8s;
+            width: 2px;
+            height: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">RIOCHEATS</div>
+        <div class="box" id="prediction">Waiting for next period...</div>
+        <div class="box" id="time"></div>
+        <div class="box" id="countdown"></div>
+        <button class="predict-btn" id="predict-btn" onclick="getPrediction()" disabled>GET RESULTS</button>
+    </div>
+
+    <!-- Raindrops -->
+    <div class="raindrop"></div>
+    <div class="raindrop"></div>
+    <div class="raindrop"></div>
+    <div class="raindrop"></div>
+    <div class="raindrop"></div>
+    <div class="raindrop"></div>
+    <div class="raindrop"></div>
+    <div class="raindrop"></div>
+    <div class="raindrop"></div>
+    <div class="raindrop"></div>
+    <div class="raindrop"></div>
+    <div class="raindrop"></div>
+    <div class="raindrop"></div>
+    <div class="raindrop"></div>
+    <div class="raindrop"></div>
+    <div class="raindrop"></div>
+    <div class="raindrop"></div>
+    <div class="raindrop"></div>
+    <div class="raindrop"></div>
+    <div class="raindrop"></div>
+
+    <script>
+        let predictionReleased = false;
+
+        function getPrediction() {
+            if (!predictionReleased) {
+                const options = ["Big", "Small"];
+                const randomIndex = Math.floor(Math.random() * 2);
+                const prediction = options[randomIndex];
+
+                // Display the prediction result
+                document.getElementById("prediction").innerText = `Result: ${prediction}`;
+                // Disable the button
+                document.getElementById("predict-btn").disabled = true;
+                predictionReleased = true;
+
+                // Add voice for the result
+                const utterance = new SpeechSynthesisUtterance(prediction);
+                speechSynthesis.speak(utterance);
+            }
+        }
+
+        function updateTime() {
+            const now = new Date();
+            const istOffset = 5.5 * 60 * 60 * 1000;
+            const istTime = new Date(now.getTime() + istOffset);
+
+            const hours = String(istTime.getUTCHours()).padStart(2, '0');
+            const minutes = String(istTime.getUTCMinutes()).padStart(2, '0');
+            const seconds = String(istTime.getUTCSeconds()).padStart(2, '0');
+
+            document.getElementById("time").innerText = `CURRENT PERIOD TIME: ${hours}:${minutes}:${seconds}`;
+
+            const countdown = 60 - istTime.getUTCSeconds();
+            document.getElementById("countdown").innerText = `Next prediction in: ${countdown} sec`;
+
+            if (countdown === 59) {
+                document.getElementById("predict-btn").disabled = false;
+                predictionReleased = false;
+                document.getElementById("prediction").innerText = "Waiting for next prediction...";
+            }
+        }
+
+        setInterval(updateTime, 1000);
+        window.onload = updateTime;
+    </script>
+</body>
+</html>
